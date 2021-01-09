@@ -1,0 +1,47 @@
+<div class="container">
+
+
+    <div class="row " [hidden]="submitted">
+        <div class="col-12 ">
+            <h2 class="text-body mx-auto"
+                style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; max-width: 900px;">
+                <span class="utility1 rounded" style="text-align: center;">Add Employee</span>
+            </h2>
+        </div>
+    </div>
+
+
+    <div class="card mx-auto" style="max-width: 900px; height: 330px;" [hidden]="submitted">
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <label for="firstName">First Name : </label>
+                    <input type="text" class="form-control" id="firstName" [(ngModel)]="employee.firstName"
+                        name="firstName" #box1>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name : </label>
+                    <input type="text" class="form-control" id="lastName" [(ngModel)]="employee.lastName"
+                        name="lastName" #box2>
+                </div>
+                <div class="form-group">
+                    <label for="uid">UID : </label>
+                    <input type="text" class="form-control" id="uid" [(ngModel)]="employee.uid" name="uid" #box3
+                        (keyup)="isAnyValue(box1.value,box2.value,box3.value)">
+                </div>
+                <button [disabled]="check()" class="btn btn-sm btn-primary float-right" type="submit"
+                    (click)="save()">Add Employee</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div [hidden]="!submitted" class="text-justify">
+        <h3 class="bg-success text-white" style="text-align:center">Record added successfully</h3>
+        <div style="text-align: center;">
+            <br>
+            <button class="btn btn-info" (click)="newEmployee()">Add More Record</button>
+        </div>
+    </div>
+
+</div>

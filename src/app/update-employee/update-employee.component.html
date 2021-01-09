@@ -1,0 +1,12 @@
+<h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;"> <b>Update Employee</b>
+</h2>
+
+
+<div class="form">
+    <div class="form-group">
+        <label><b>Update First Name : </b></label>
+        <input type="text" class="form-control" [(ngModel)]="employee.firstName" id="name" name="firstName">
+    </div>
+    
+    <button class="btn btn-primary" type="button" (click)="updateEmployee()">Update</button>
+</div>
